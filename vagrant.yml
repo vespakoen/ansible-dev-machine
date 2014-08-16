@@ -1,0 +1,10 @@
+---
+- hosts: 
+    - linux
+
+  tasks:
+  - name: Download vagrant 1.6.3 x64
+    get_url: url=https://dl.bintray.com/mitchellh/vagrant/vagrant_1.6.3_x86_64.deb dest=/tmp/vagrant.deb
+
+  - name: Install vagrant
+    apt: deb=/tmp/vagrant.deb state=installed

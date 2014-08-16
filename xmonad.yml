@@ -1,0 +1,24 @@
+---
+- hosts: linux
+
+  tasks:
+  - name: Install xmonad
+    apt: name=xmonad state=present
+
+  - name: Install dmenu
+    apt: name=dmenu state=present
+
+  - name: Make ~/.xmonad directory
+    file: path=/home/koen/.xmonad state=directory owner=koen group=koen mode=0775
+
+  - name: Copy xmonad.hs config
+    copy: src=configs/xmonad.hs dest=/home/koen/.xmonad/xmonad.hs
+
+  - name: Recompile xmonad
+    shell: xmonad --recompile
+
+  - name: Make ~/.config/autostart directory
+    file: path=/home/koen/.config/autostart state=directory owner=koen group=koen mode=0775
+
+  - name: Add xmonad to autostart
+    copy: src=configs/xmonad.desktop dest=/home/koen/.config/autostart/xmonad.desktop

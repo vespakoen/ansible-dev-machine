@@ -1,0 +1,7 @@
+---
+- hosts: 
+    - linux
+
+  tasks:
+  - name: Install virtualbox
+    apt: name=virtualbox state=present

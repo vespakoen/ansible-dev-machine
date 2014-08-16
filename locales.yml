@@ -1,0 +1,9 @@
+---
+- hosts: linux
+
+  tasks:
+    - name: Generate locales
+      command: "locale-gen {{item}}"
+      with_items:
+      - en_US.UTF-8
+      - en_US
