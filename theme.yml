@@ -1,0 +1,34 @@
+---
+- hosts:
+    - linux
+  user: koen
+  tasks:
+    - apt: name=librsvg2-bin state=present
+
+    - name: Downloading clarity icon theme
+      action: git repo=https://github.com/jcubic/Clarity dest=~/.icons/Clarity
+      sudo: yes
+      sudo_user: koen
+
+    - name: Update clarity theme
+      copy: src=configs/clarity.svg dest=/home/koen/.icons/Clarity/src/template_canus.svg
+
+    - shell: make chdir=~/.icons/Clarity
+
+    - name: Download FlatStudio
+      get_url: url=http://gnome-look.org/CONTENT/content-files/154296-FlatStudio-1.03.tar.gz dest=/tmp/flatstudio.tar.gz
+
+    - name: Make ~/.themes directory
+      file: path=/home/koen/.themes state=directory owner=koen group=koen mode=0775
+
+    - name: Unpack FlatStudio
+      unarchive: src=/tmp/flatstudio.tar.gz dest=/home/koen/.themes
+
+    - name: Replace color green
+      shell: find /home/koen/.themes/ -type f -exec sed -i -e 's/81d3d3/cb4736/g' {} \;
+
+    - name: Replace color blue
+      shell: find /home/koen/.themes/ -type f -exec sed -i -e 's/4d679a/cb4736/g' {} \;
+
+    - name: Replace color blue2
+      shell: find /home/koen/.themes/ -type f -exec sed -i -e 's/6d8cc7/cb4736/g' {} \;

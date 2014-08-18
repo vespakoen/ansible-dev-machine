@@ -1,0 +1,38 @@
+[
+  { "keys": ["ctrl+1"], "command": "select_by_index", "args": { "index": 0 } },
+  { "keys": ["ctrl+2"], "command": "select_by_index", "args": { "index": 1 } },
+  { "keys": ["ctrl+3"], "command": "select_by_index", "args": { "index": 2 } },
+  { "keys": ["ctrl+4"], "command": "select_by_index", "args": { "index": 3 } },
+  { "keys": ["ctrl+5"], "command": "select_by_index", "args": { "index": 4 } },
+  { "keys": ["ctrl+6"], "command": "select_by_index", "args": { "index": 5 } },
+  { "keys": ["ctrl+7"], "command": "select_by_index", "args": { "index": 6 } },
+  { "keys": ["ctrl+8"], "command": "select_by_index", "args": { "index": 7 } },
+  { "keys": ["ctrl+9"], "command": "select_by_index", "args": { "index": 8 } },
+  { "keys": ["ctrl+0"], "command": "select_by_index", "args": { "index": 9 } },
+  { "keys": ["ctrl+k", "ctrl+d"], "command": "toggle_distraction_free" },
+  { "keys": ["ctrl+k", "ctrl+m"], "command": "toggle_menu" },
+  { "keys": ["ctrl+shift+c"], "command": "php_namespace_copy" },
+  { "keys": ["ctrl+shift+u"], "command": "php_namespace_insert_use" },
+  { "keys": ["ctrl+shift+i"], "command": "php_namespace_insert_namespace" },
+  { "keys": ["ctrl+shift+1"], "command": "focus_side_bar" },
+  { "keys": ["ctrl+shift+2"], "command": "focus_group", "args": { "group": 0 } },
+  { "keys": ["ctrl+shift+a"], "command": "alignment" },
+  { "keys": ["alt+shift+r"], "command": "php_namespace_clean" },
+  { "keys": ["alt+shift+c"], "command": "php_namespace_copy" },
+  { "keys": ["alt+shift+u"], "command": "php_namespace_insert_use" },
+  { "keys": ["alt+shift+i"], "command": "php_namespace_insert_namespace" },
+  { "keys": ["alt+shift+e"], "command": "php_namespace_extend" },
+  {
+      "keys": ["alt+z"],
+      "command": "zeal_search_selection"
+  },
+  {
+      "keys": ["alt+shift+space"],
+      "command": "zeal_search"
+  },
+  {
+    "keys": ["f1"],
+    "command": "dired",
+    "args": { "immediate": true }
+  }
+]

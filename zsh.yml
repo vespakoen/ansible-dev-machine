@@ -1,0 +1,15 @@
+---
+- hosts: linux
+
+  tasks:
+  - name: Install zsh
+    apt: name=zsh state=present
+
+  - name: Installing oh-my-zsh (https://github.com/robbyrussell/oh-my-zsh)
+    action: git repo=https://github.com/robbyrussell/oh-my-zsh dest=~/.oh-my-zsh
+
+  - name: Creating new ~/.zshrc
+    action: shell cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+  - name: Changing the default shell to zsh
+    action: user shell=/bin/zsh user=koen

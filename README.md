@@ -16,4 +16,8 @@ sudo ansible-playbook --connection=local virtualbox.yml
 sudo ansible-playbook --connection=local vagrant.yml
 sudo ansible-playbook --connection=local sublime-text.yml
 sudo ansible-playbook --connection=local xmonad.yml
+sudo ansible-playbook --connection=local xmodmap.yml
+sudo ansible-playbook --connection=local zsh.yml
+sudo ansible-playbook --connection=local spf13vim.yml
+sudo ansible-playbook --connection=local theme.yml
 ```

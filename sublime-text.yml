@@ -1,5 +1,5 @@
 ---
-- hosts: 
+- hosts:
     - linux
 
   tasks:
@@ -8,3 +8,11 @@
 
   - name: Install sublime text
     apt: deb=/tmp/sublime-text.deb state=installed
+
+  - name: Move settings into place
+    copy: src=configs/Preferences.sublime-settings dest=/home/koen/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+
+  - name: Move keybindings into place
+    copy:
+      src: "configs/Default (Linux).sublime-keymap"
+      dest: "/home/koen/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap"

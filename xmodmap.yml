@@ -1,0 +1,6 @@
+---
+- hosts: linux
+
+  tasks:
+  - name: Move .Xmodmap into place
+    copy: src=configs/xmodmap dest=/home/koen/.Xmodmap
